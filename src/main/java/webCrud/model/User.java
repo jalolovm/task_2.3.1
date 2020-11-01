@@ -1,19 +1,26 @@
 package webCrud.model;
 
+import org.springframework.stereotype.Component;
+
 import javax.persistence.*;
 
 @Entity
-@Table
+@Table(name = "users")
+@Component
 public class User {
 
     @Id
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column (name = "name", nullable = false)
     private String name;
 
+    @Column (name = "surname", nullable = false)
     private String surname;
 
+    @Column (name = "age", nullable = false)
     private int age;
 
     public User() {
